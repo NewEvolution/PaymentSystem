@@ -8,6 +8,7 @@ namespace PaymentSystem
         {
             string response = "Invalid input. No payment made.";
 
+            // Four arguments for PayPal payments
             if (args.Length == 4)
             {
                 PayPalPayment payment = new PayPalPayment
@@ -19,6 +20,7 @@ namespace PaymentSystem
                 };
                 response = payment.MakePayment();
             }
+            // Three arguments for credit card payments
             else if (args.Length == 3)
             {
                 CreditCardPayment payment = new CreditCardPayment
@@ -29,6 +31,7 @@ namespace PaymentSystem
                 };
                 response = payment.MakePayment();
             }
+            // Two arguments for credit card payments
             else if (args.Length == 2)
             {
                 Payment payment = new Payment
