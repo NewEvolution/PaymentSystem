@@ -15,7 +15,12 @@ namespace PaymentSystem
 
         public string SendConfirmation(string email)
         {
-            return "You purchased several nice items.";
+            return "You have purchased several nice items";
+        }
+
+        public string SendConfirmation(string email, bool digitalDownload)
+        {
+            return "Check your email for a dowload link.";
         }
     }
 }
