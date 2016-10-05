@@ -7,11 +7,12 @@ namespace PaymentSystem
         public static void Main(string[] args)
         {
             string response = "Invalid input. No payment made.";
+            Payment payment = null;
 
             // Four arguments for PayPal payments
             if (args.Length == 4)
             {
-                PayPalPayment payment = new PayPalPayment
+                payment = new PayPalPayment
                 {
                     CustomerName = args[0],
                     Amount = Convert.ToDecimal(args[1]),
@@ -23,7 +24,7 @@ namespace PaymentSystem
             // Three arguments for credit card payments
             else if (args.Length == 3)
             {
-                CreditCardPayment payment = new CreditCardPayment
+                payment = new CreditCardPayment
                 {
                     CustomerName = args[0],
                     Amount = Convert.ToDecimal(args[1]),
@@ -34,7 +35,7 @@ namespace PaymentSystem
             // Two arguments for credit card payments
             else if (args.Length == 2)
             {
-                Payment payment = new Payment
+                payment = new Payment
                 {
                     CustomerName = args[0],
                     Amount = Convert.ToDecimal(args[1])
